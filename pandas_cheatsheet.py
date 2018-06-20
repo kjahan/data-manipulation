@@ -49,18 +49,21 @@ def pandas_data_alignment():
 	print "Data frame created from ts1 & ts2 (ts2 have some missing values!):\n", df, "\n-----------------------"
 
 	#Missing data handling
-	print "df count per column (pandas ignores NaN):\n", df.count(), "\n-----------------------"
-	print "df sum per column (pandas ignores NaN):\n", df.sum(), "\n-----------------------"
-	print "df mean  per column (pandas ignores NaN):\n", df.mean(), "\n-----------------------"
+	print "df.count() counts per column (pandas ignores NaN):\n", df.count(), "\n-----------------------"
+	print "df.sum() sums entries per column (pandas ignores NaN):\n", df.sum(), "\n-----------------------"
+	print "df.mean() computes mean per column (pandas ignores NaN):\n", df.mean(), "\n-----------------------"
 
 	print "Use dropna() removes if there is any missing value:\n", df.dropna(), "\n-----------------------"
 
-	print "Use fillna(0) method to replace NaN with 0:\n", df.fillna(0), "\n-----------------------"
+	print "Use fillna(0) to replace NaN with 0:\n", df.fillna(0), "\n-----------------------"
 
 	print "Use fillna(method='ffill') to propagate last valid observation forward:\n", df.fillna(method='ffill'), "\n-----------------------"
 
 	# df.asfreq('4h')
 
-if __name__ == "__main__":
+def run():
 	#pandas_basics_demo()
 	pandas_data_alignment()
+
+if __name__ == "__main__":
+	run()

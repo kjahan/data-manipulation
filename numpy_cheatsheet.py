@@ -9,11 +9,11 @@ def numpy_multiply(dim):
 	y = np.random.rand(dim)
 	z = np.multiply(x, y)
 
-	#print x[10], y[10], z[10]
-	print z.shape
+	#print z.shape
 
 	with open("numpy_array.bin", "wb") as fp:
 		np.save(fp, z)
+
 	return 0
 
 def python_list_multiply(dim):
@@ -21,7 +21,6 @@ def python_list_multiply(dim):
 	y = [random.random() for k in range(dim)]
 	z = [x[i]*y[i] for i in range(dim)]
 
-	#print x[10], y[10], z[10]
 	with open("python_list.pkl", "wb") as fp:
 		pickle.dump(z, fp)
 
@@ -105,11 +104,15 @@ def numpy_linear_algebra_demo():
 	print "eigenvalues & eigenvectors of x:, np.linalg.eig(x):\n", np.linalg.eig(x), "\n-----------------------"
 
 
-if __name__ == "__main__":
-    measure_multiply_perf()
-    numpy_array_creation_demo()
-    numpy_range_demo()
-    numpy_array_funcs_demo()
-    numpy_matrix_creation_demo()
-    numpy_matrix_operation_demo()
+def run():
+	# measure_multiply_perf()
+ #    numpy_array_creation_demo()
+ #    numpy_range_demo()
+ #    numpy_array_funcs_demo()
+ #    numpy_matrix_creation_demo()
+ #    numpy_matrix_operation_demo()
     numpy_linear_algebra_demo()
+
+    
+if __name__ == "__main__":
+	run()
